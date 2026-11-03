@@ -1,0 +1,28 @@
+CISCO-PE01#show running-config
+Building configuration...
+!
+hostname CISCO-PE01
+!
+vrf definition CUSTOMER_ALPHA
+rd 65001:100
+address-family ipv4
+!
+vrf definition CUSTOMER_BETA
+rd 65001:200
+address-family ipv4
+!
+interface GigabitEthernet0/0/0.100
+description CUST_ALPHA_SERVICE_455023849
+encapsulation dot1Q 100
+vrf forwarding CUSTOMER_ALPHA
+ip address 10.10.10.1 255.255.255.252
+!
+interface GigabitEthernet0/0/0.200
+description CUST_BETA_SERVICE_452397680
+encapsulation dot1Q 200
+vrf forwarding CUSTOMER_BETA
+ip address 10.20.20.1 255.255.255.252
+!
+end
+
+CISCO-PE01#

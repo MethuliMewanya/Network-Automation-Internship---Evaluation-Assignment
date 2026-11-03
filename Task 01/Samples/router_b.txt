@@ -1,0 +1,26 @@
+<HUAWEI-PE02>display current-configuration
+!
+sysname HUAWEI-PE02
+!
+ip vpn-instance CUSTOMER_GAMMA
+ipv4-family
+ route-distinguisher 65002:300
+!
+ip vpn-instance CUSTOMER_DELTA
+ipv4-family
+ route-distinguisher 65002:400
+!
+interface GigabitEthernet0/0/1.300
+description CUST_GAMMA_SERVICE_298765432
+vlan-type dot1q 300
+ip binding vpn-instance CUSTOMER_GAMMA
+ip address 10.30.30.1 255.255.255.252
+!
+interface GigabitEthernet0/0/1.400
+description CUST_DELTA_SERVICE_099876543
+vlan-type dot1q 400
+ip binding vpn-instance CUSTOMER_DELTA
+ip address 10.40.40.1 255.255.255.252
+!
+return
+[HUAWEI-PE02]
