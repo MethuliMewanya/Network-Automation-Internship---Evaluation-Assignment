@@ -1,5 +1,7 @@
 # Network Automation Internship-Evaluation Assignment
 
+Candidate Name - Lihansa Methuli Mewanya
+
 ## Structure
 ```
 Task 01/
